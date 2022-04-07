@@ -40,9 +40,7 @@ Resultados:
 |CANINE-C | 0.799 | 0.768 | 0.781 |
 |ALBERT-base-v2|0.801|0.761|0.778|
 |Roberta| 0.818  | 0.79   | 0.802   |
-|BERT |     |    |     |
-
-
+|BERT |  0.820   | 0.769   | 0.789    |
 
 
 [1] https://webis.de/data/webis-clickbait-17.html
