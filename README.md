@@ -23,7 +23,19 @@ Por restricciones del enunciado, se prioriza en este estudio la exploración de 
 - BERT
 - Roberta
 - Albert
-- Canine-c
+- Canine-c: Este modelo basado en transformer ha sido entrenado con un corpus multilingue siguiendo un enfoque de autosupervisión similar al planteado en BERT. Entre las particularidades que presenta este modelo se encuentra el uso de una representación interna basada en caracteres con el fin de paliar posibles errores derivados de procesos de tokenización. He considerado este modelo de interes dada su presencia en el estado del arte y su capacidad de adaptación a dominios no libres de errores.
+
+
+Resultados:
+
+
+
+
+CANINE-C
+
+Precision 0.7990018045719853
+Recall 0.7687195639256683
+Fscore 0.7818446284539136
 
 
 
