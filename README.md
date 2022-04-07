@@ -20,11 +20,15 @@ Modelos explorados:
 
 Por restricciones del enunciado, se prioriza en este estudio la exploración de modelos basados en BERT y semejantes. En total se van a explorar los siguientes modelos:
 
-- BERT:
+- BERT: Modelo base de BERT. Se ha escogido la versión cased para comprobar la precisión que aporta el hecho que los mensajes analizados esten escritos por medios oficiales de prensa escrita i.e. se puede asumir que estan correctamente escritos, mayusculas incluidas.
+https://huggingface.co/bert-base-cased
+
 - Roberta: Pequeña modificación del esquema de BERT, centrada especialmente en el tokenizador utilizado. Este tokenizador se basa en el empleado por modelos como GPT-2, byte-level BPE [2]. Su uso permite tanto una mayor generalización como una mejor transferencia de conocimiento entre idiomas en contextos multilingues.
 https://huggingface.co/roberta-base
+
 - Albert: Este modelo basado en BERT propone cambios interesantes la aquitectura original, como la reducción de parametros redundantes mediante la compartición de parametros entre layers y la incorporación de SOP (Sentence Order Prediction) en contraposición a NSP (Next Sentence Prediction). A grandes rasgos mientras que NSP busca la coherencia y la estructura a la hora de determinar si una tupla de oraciones son consecutivas, SOP unicamente se centra en la coherencia, reduciendo la complejidad durante el entrenamiento.
 https://huggingface.co/albert-base-v2
+
 - Canine-c: Este modelo basado en transformer ha sido entrenado con un corpus multilingue siguiendo un enfoque de autosupervisión similar al planteado en BERT. Entre las particularidades que presenta este modelo se encuentra el uso de una representación interna basada en caracteres con el fin de paliar posibles errores derivados de procesos de tokenización. He considerado este modelo de interes dada su presencia en el estado del arte y su capacidad de adaptación a dominios no libres de errores.
 https://huggingface.co/google/canine-c
 
@@ -42,4 +46,5 @@ Resultados:
 
 
 [1] https://webis.de/data/webis-clickbait-17.html
+
 [2] https://towardsdatascience.com/byte-pair-encoding-subword-based-tokenization-algorithm-77828a70bee0
