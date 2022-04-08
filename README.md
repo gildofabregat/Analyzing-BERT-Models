@@ -16,6 +16,18 @@ e.g:
 Con el fin de explorar y evaluar sistemas automáticos para la detección de clickbaits, recursos como el Clickbait Corpus 2017 [1] se pusieron a disposición del publico. Este corpus consiste en una extensa colección de tweets extraidos de los 27 mas importantes medios de comunicación de Estados Unidos.
 
 
+### Analisis de los datos:
+
+La tarea se presenta como una problema de clasificación binaria desbalanceada, donde es mucho mayor el numero de instancias de la clase no-clickbait.
+    
+    Utilizar metricas de evaluación teniendo en cuenta este aspecto puede favorecer el tomar consciencia del rendimiento real del modelo. Adicionalmente, se puede considerar añadir una ponderación sobre las clases durante el entrenamiento, no obstante, esto estableceria un conocimiento a priori sobre la tarea que puede no ocurrir en otros contextos i.e. corpus, etc.
+
+Los terminos mas frecuentes utlizados en la clase clickbait, tienden a ser términos atractivos para el usuario o que en un principio tratan de llamar el interes.
+
+Los expresiones mas frecuentes utilizadas en la clase clickbait, tienden a ser mensajes dirigidos al usuario e.g. "you need to know"... "do it to obtain"...
+
+Analizando la polaridad media de los mensajes de ambas clases, no hay evidentes diferencias. Respecto a la subjectividad, aunque minimas, hay algunas diferencias que podrían ayudar a una mejor segmentación.
+
 ### Modelos explorados:
 
 En este se prioriza la exploración de modelos basados en BERT y semejantes. En total se van a explorar los siguientes modelos:
