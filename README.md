@@ -20,6 +20,8 @@ Con el fin de explorar y evaluar sistemas automáticos para la detección de cli
 
 En este se prioriza la exploración de modelos basados en BERT y semejantes. En total se van a explorar los siguientes modelos:
 
+- Baseline: Universal Sentence Encoder + Approximate Nearest Neighbors. Haciendo uso de una representación obtenida mediante universal sentence encoder (DAN - Deep Averaging Network) se presenta un baseline basado en la extracción de vecinos mas cercanos aproximada. Como herramienta se utiliza Annoy para el calculo del indice de vecinos. Como heuristica, se plantea el calculo de los 10 vecinos mas cercanos para una instancia X y la clasificacion de X como parte de la clase mayoritaria entre los vecinos recuperados.
+
 - BERT: Modelo base de BERT. Se ha escogido la versión cased para comprobar la precisión que aporta el hecho que los mensajes analizados esten escritos por medios oficiales de prensa escrita i.e. se puede asumir que estan correctamente escritos, mayusculas incluidas.
 https://huggingface.co/bert-base-cased
 
@@ -37,6 +39,7 @@ https://huggingface.co/google/canine-c
 
 | Modelo | Precision | Recall | Fscore |
 |--------|------------|--------|--------|
+|USE+ANN|0.780        |0.731| 0.750|
 |CANINE-C | 0.799 | 0.768 | 0.781 |
 |ALBERT-base-v2|0.801|0.761|0.778|
 |Roberta| 0.818  | 0.79   | 0.802   |
