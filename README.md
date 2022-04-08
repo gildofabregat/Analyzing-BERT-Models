@@ -2,7 +2,7 @@
 
 Con motivo de explorar una tarea de clasificación de textos, y dada la facilidad que existe actualmente para explorar modelos de deep learning, debido tanto a la cantidad de código diponible como a los recursos que cada día se van poniendo a disposición del publico con APIs cada vez mas accesibles, en este repositorio encontraras diferentes notebooks donde se explora el rendimiento de modelos basados en BERT para la detección de clickbaits. Mi idea con esto, es explorar las bondades y limitaciones de cada uno de los modelos para la tarea a explorar.
 
-Tarea a explorar: Detección de clicbait
+### Tarea a explorar: Detección de clicbait
 El termino clickbait al responde a la expresión "caer en el cebo" o como se diría en internet, "hacer click en el cebo". Esta técnica surge con el auge de las nuevas tecnologias como medio de información, y consiste en la utilización de mensajes "atractivos" (i.e. sensacionalistas o de dudosa procedencia) para atraer al publico hacia determinadas webs generando así trafico en ellas.
 
 e.g:
@@ -16,7 +16,7 @@ e.g:
 Con el fin de explorar y evaluar sistemas automáticos para la detección de clickbaits recursos como el Clickbait Corpus 2017 [1] se pusieron a disposición del publico. Este corpus consiste en una extensa colección de tweets extraidos de los 27 mas importantes  medios de comunicación de Estados Unidos.
 
 
-Modelos explorados:
+### Modelos explorados:
 
 Por restricciones del enunciado, se prioriza en este estudio la exploración de modelos basados en BERT y semejantes. En total se van a explorar los siguientes modelos:
 
@@ -32,7 +32,7 @@ https://huggingface.co/albert-base-v2
 - Canine-c: Este modelo basado en transformer ha sido entrenado con un corpus multilingue siguiendo un enfoque de autosupervisión similar al planteado en BERT. Entre las particularidades que presenta este modelo se encuentra el uso de una representación interna basada en caracteres con el fin de paliar posibles errores derivados de procesos de tokenización. He considerado este modelo de interes dada su presencia en el estado del arte y su capacidad de adaptación a dominios no libres de errores.
 https://huggingface.co/google/canine-c
 
-Resultados:
+### Resultados:
 
 
 | Modelo | Precision | Recall | Fscore |
@@ -43,6 +43,27 @@ Resultados:
 |BERT |  0.820   | 0.769   | 0.789    |
 
 
+Hasta el momento los resultados obtenidos destacan el uso de tokenizadores basados en SOP frente a NSP e.g. Roberta Vs BERT. Aunque se espera que los textos esten bien formados (dado los autores de los textos) no hay que olvidar que provienen de Twitter y en esta red social se tienden a usar tantos expresiones propias como abreviaturas. Modelos como WordPiece entrenados con textos de Wikipedia, etc, ofrecen menos flexibilidad en este sentido.
+
+En este mismo sentido, destaca el bajo rendimiento de modelos como CANINE dado que es un modelo que no utiliza tokenizador alguno i.e. unicamente hace split por espacio en blanco.
+
+Respecto a restricciones y limitaciones de este tipo de modelos, no hay sido necesario estudiar extensiones o modelos elaborados para cubrir textos mas alla de los 512 tokens. Es más, para agilizar el computo se ha limitado el tamaño de los textos a 200 tokens. 
+
+
+### Posibles mejoras
+
+- Incorporación de modelos propios del dominio. Modelos como BertTweet [3] pueden suponer interesantes mejoras dado que estan entrenados con datos extraidos de Twitter.
+- Estudio de modelos multilingues. Represetaciones multiligues como LABSE y Multilingual Sentence Encoder [4,5] podrian ayudar a minimizar la necesidad de anotar datos en otros idiomas.
+
+
+## Referencias
+
 [1] https://webis.de/data/webis-clickbait-17.html
 
 [2] https://towardsdatascience.com/byte-pair-encoding-subword-based-tokenization-algorithm-77828a70bee0
+
+[3] https://huggingface.co/vinai/bertweet-base
+
+[4] https://tfhub.dev/google/LaBSE/2
+
+[5] https://tfhub.dev/google/universal-sentence-encoder-multilingual/3
