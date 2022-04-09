@@ -137,7 +137,7 @@ Conjunto de los primeros 20 falsos negativos detectados:
 
 - Incorporación de modelos propios del dominio. Modelos como BertTweet [3] pueden suponer interesantes mejoras dado que estan entrenados con datos extraidos de Twitter.
 - Estudio de modelos multilingues. Represetaciones multiligues como LABSE y Multilingual Sentence Encoder [4,5] podrian ayudar a minimizar la necesidad de anotar datos en otros idiomas.
-
+- Dado que Roberta es un modelo case sensitive y la tarea en cuestión, probablemente, no requiere de la consideración de esta feature, resulta de interes la exploración de modelos no case sensitive.
 
 ## Referencias
 
