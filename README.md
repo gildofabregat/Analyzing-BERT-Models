@@ -18,15 +18,22 @@ Con el fin de explorar y evaluar sistemas automáticos para la detección de cli
 
 ### Analisis de los datos:
 
-La tarea se presenta como una problema de clasificación binaria desbalanceada, donde es mucho mayor el numero de instancias de la clase no-clickbait.
+La tarea se presenta como una problema de clasificación binaria desbalanceada, donde es mucho mayor el numero de instancias de la clase no-clickbait:
     
-    Utilizar metricas de evaluación teniendo en cuenta este aspecto puede favorecer el tomar consciencia del rendimiento real del modelo. Adicionalmente, se puede considerar añadir una ponderación sobre las clases durante el entrenamiento, no obstante, esto estableceria un conocimiento a priori sobre la tarea que puede no ocurrir en otros contextos i.e. corpus, etc.
+- Utilizar metricas de evaluación teniendo en cuenta este aspecto puede favorecer el tomar consciencia del rendimiento real del modelo. Adicionalmente, se puede considerar añadir una ponderación sobre las clases durante el entrenamiento, no obstante, esto estableceria un conocimiento a priori sobre la tarea que puede no ocurrir en otros contextos i.e. corpus, etc.
 
-Los terminos mas frecuentes utlizados en la clase clickbait, tienden a ser términos atractivos para el usuario o que en un principio tratan de llamar el interes.
+- Atendiendo a datos mostrados en el articulo [7] durante la anotación se establecierón criterios de anotación en función de umbrales respecto al concepto de clickbaiting. Las clases con mayor agreement se concentrarón en los extremos (non-clickbait y heavily clickbaiting). El disagreement mostrado durante la anotación puede servir como oraculo del rendimiento ideal esperado por un sistema automatico.
 
-Los expresiones mas frecuentes utilizadas en la clase clickbait, tienden a ser mensajes dirigidos al usuario e.g. "you need to know"... "do it to obtain"...
 
-Analizando la polaridad media de los mensajes de ambas clases, no hay evidentes diferencias. Respecto a la subjectividad, aunque minimas, hay algunas diferencias que podrían ayudar a una mejor segmentación.
+<img src="https://www.researchgate.net/profile/Tim-Gollub/publication/330009436/figure/tbl2/AS:709773737590784@1546234654833/Webis-Clickbait-Corpus-2017-Corpus-acquisition-overview-left-corpus-annotation.png" alt="Imagen extraida del articulo: Webis-Clickbait Corpus 2017-Corpus acquisition overview" width="600"/>
+
+- Los terminos mas frecuentes utlizados en la clase clickbait, tienden a ser términos atractivos para el usuario o que en un principio tratan de llamar el interes.
+
+- Los expresiones mas frecuentes utilizadas en la clase clickbait, tienden a ser mensajes dirigidos al usuario e.g. "you need to know"... "do it to obtain"...
+
+- Analizando la polaridad media de los mensajes de ambas clases, no hay evidentes diferencias. Respecto a la subjectividad, aunque minimas, hay algunas diferencias que podrían ayudar a una mejor segmentación.
+
+- Aplicando técnicas como la presentada en [6] los keywords mas relevantes indican que gran parte de las intancias tratan sobre noticias relacionadas con Donal Trump, entre otros.
 
 ### Modelos explorados:
 
@@ -80,3 +87,7 @@ Respecto a restricciones y limitaciones de este tipo de modelos, no hay sido nec
 [4] https://tfhub.dev/google/LaBSE/2
 
 [5] https://tfhub.dev/google/universal-sentence-encoder-multilingual/3
+
+[6] https://www.sciencedirect.com/science/article/abs/pii/S0020025519308588
+
+[7] https://arxiv.org/abs/1812.10847#:~:text=The%20Clickbait%20Challenge%202017%3A%20Towards%20a%20Regression%20Model%20for%20Clickbait%20Strength,-Martin%20Potthast%2C%20Tim&text=Clickbait%20has%20grown%20to%20become,their%20websites%20using%20clickbait%20messages.
