@@ -73,6 +73,11 @@ Respecto a restricciones y limitaciones de este tipo de modelos, no hay sido nec
 
 El modelo entrenado con Roberta ha sido el modelo que mejor rendimiento ha alcanzado, siendo su nivel de error comparable con el nivel de disagreement mostrado durante la anotación del corpus. Los siguientes datos se han obtenido del notebook correspondiente:
 
+Matriz de confusion
+![Matriz de confusion Roberta-Base-Cased](https://user-images.githubusercontent.com/7199540/162567238-9e73ea77-94e8-4115-96aa-a8b0141fca7d.png)
+
+
+
 Conjunto de los primeros 20 falsos positivos detectados:
 
 ```
