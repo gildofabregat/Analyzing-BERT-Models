@@ -69,6 +69,64 @@ Hasta el momento los resultados obtenidos destacan el uso de modelos basados en 
 
 Respecto a restricciones y limitaciones de este tipo de modelos, no hay sido necesario estudiar extensiones o modelos elaborados para cubrir textos mas alla de los 512 tokens. Es más, para agilizar el computo se ha limitado el tamaño de los textos a 200 tokens.
 
+### Analisis de errores
+
+El modelo entrenado con Roberta ha sido el modelo que mejor rendimiento ha alcanzado, siendo su nivel de error comparable con el nivel de disagreement mostrado durante la anotación del corpus. Los siguientes datos se han obtenido del notebook correspondiente:
+
+Conjunto de los primeros 20 falsos positivos detectados:
+
+```
+- Don't abandon the snot if you want to be healthy. #EwwButTrue
+- United Takes Added Steps to Win Back Customers and Avoid More Ugly Events
+- Shea Moisture put out—and promptly pulled—(another) controversial ad.
+- Here's where weed is legal in the U.S.:
+- The fascinating hidden history of London's lost rivers
+- 21 really cute tattoos that are perfect for couples
+- How to get Lady Gaga's mesmerizing eyes from #Coachella
+- As per latest leak coming out of #China, the #iPhone8 may sport some truly unique #features
+- Asteroid study explains how disaster movies get it wrong  via @NBCNewsMACH
+- Big ideas: the airline mess, provocative views from Bridgewater's Dalio. Plus @domino's win!
+- This cyclist just conquered the art of aerodynamics 🎥:
+- 27 stylish bathing suits you can get on Amazon
+- 'Poppers' can cause irreversible damage to your eyes
+- Elon Musk has an awkward problem at Tesla: employee parking
+- State of emergency declared in Egypt following Palm Sunday church attacks
+- MTV gets rid of gender-specific categories for the MTV Movie &amp; TV Awards.
+- Senate expected to confirm Neil Gorsuch as Supreme Court justice
+- The National Organization for Women call for Bill O'Reilly to be fired as 12 companies pull their ads
+- What is the nuclear option? Here is how the maneuver would work:
+- Explorer: Along the Mekong River, a Timeless Place Where Time Marches On
+```
+
+Como se puede observar el sistema comete errores evaluando como clickbaits titulares como "State of emergency...", "... nuclear option...", "... to Win..." y "... if you want to be healthy".
+
+---
+
+Conjunto de los primeros 20 falsos negativos detectados:
+
+```
+- He worked in a factory floor. He now helps build the robots that are replacing human labor
+- Congratulations, Kalpit Veerval 👏
+- Jealous wife chops off her husband's PENIS with a pair of scissors after growing 'tired of his womanising'
+- Latest Uber controversy sheds light on how companies use your emails:
+- "Why is Bill Clinton given a pass over the other Bills?"
+- Guys, the new “Zelda” game is so freakin’ fun
+- What the French elections mean for Brexit
+- Did Von Miller wear a better Coachella outfit than Cam Newton? 🤔
+- How the shale boom turned the world's energy markets upside down:
+- Opinions: A young prince is reimagining Saudi Arabia. Can he make his vision come true?
+- What to watch for in the first round of the French presidential election
+- Chris Brown's new documentary is coming to theaters and shit gets real
+- Dana White reveals just how much money Conor McGregor could bank for Floyd Mayweather fight
+- Riding the wave: Meet the surfer who helped 7 million people get clean water
+- Here's what the 'Game of Thrones' stars look like in real life
+- The internet has found Tom Hardy's doppelganger. 👀
+- Check out the full credits for Harry Styles' #SignoftheTimes single
+- REVEALED: Kim’s plan to kidnap Western tourists from South Korea
+- A roundup of top #entertainment stories from the day that was
+- America's airlines are shameless. But United just set a new low | Arwa Mahdawi
+```
+
 
 ### Posibles mejoras
 
