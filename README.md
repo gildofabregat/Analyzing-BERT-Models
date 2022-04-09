@@ -144,6 +144,13 @@ Conjunto de los primeros 20 falsos negativos detectados:
 |BERT |  0.820   | 0.769   | 0.789    |
 |BERT-uncased |  0.798   | 0.787   | 0.792    |
 
+El entrenamiento de un modelo BERT-uncased produce interesantes mejoras. Dado que no hay disponible un modelo de Roberta-uncased, y aun con el riego de introducir un posible ruido, he probado el modelo Roberta-base (cased) transformando previamente el texto a minusculas.
+
+Precision 0.8223998213930197
+Recall 0.7738639927536131
+Fscore 0.7935136174840356
+
+Los resultados parecen indicar que futuras lineas de trabajo deberian centrarse en el estudio de modelos uncased.
 
 ## Referencias
 
